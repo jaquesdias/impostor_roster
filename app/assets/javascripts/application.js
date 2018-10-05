@@ -14,6 +14,7 @@
 //= require twitter/bootstrap
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require selectize
 
 $(document).ready(function() {
   var inabilityInput = $(".new-submission input[name='post[inability]']");
@@ -45,6 +46,7 @@ $(document).ready(function() {
     }
   });
 
+  $('.js-select-category').selectize();
 });
 
 //= require_tree .
