@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories = Category.pluck(:name, :id)
     @field = params[:category] if params[:category]
   end
 

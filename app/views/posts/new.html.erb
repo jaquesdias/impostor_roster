@@ -6,7 +6,8 @@
     <%= form_tag '/posts' do %>
       <div class="form-group">
         <%= label_tag "Field you are in:" %>
-        <%= text_field_tag 'post[category]', @field, class: "form-control", placeholder: 'Your industry or topic for this confession' %>
+        <%= select_tag 'post[category]', options_for_select(@categories, @field), include_blank: 'Your industry or topic for this confession', class: 'form-control js-select-category'  %>
+        <%#= text_field_tag 'post[category]', @field, class: "form-control", placeholder: 'Your industry or topic for this confession' %>
       </div>
       <div class="form-group">
         <%= label_tag "Months of Experience:" %>
