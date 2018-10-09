@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :categories, only: [:new, :create]
 
   def index
     params[:page] ||= 1
@@ -7,7 +8,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @categories = Category.pluck(:name, :id)
     @field = params[:category] if params[:category]
   end
 
@@ -36,6 +36,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def categories
+    @categories = Category.pluck(:name, :name)
+  end
 
   def captcha_if_needed
     if Rails.env.staging? || Rails.env.production?

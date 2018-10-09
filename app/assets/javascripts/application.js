@@ -46,7 +46,9 @@ $(document).ready(function() {
     }
   });
 
-  $('.js-select-category').selectize();
+  $('.js-select-category').selectize({
+    create: true
+  });
 });
 
 //= require_tree .
